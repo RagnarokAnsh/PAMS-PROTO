@@ -259,7 +259,7 @@ export function Dashboard() {
                 <FileDown className="w-4 h-4 mr-2" />
                 Export
               </Button>
-              <Link to="/dashboard/agreements/create">
+              <Link to="/agreements/create">
                 <Button className="bg-primary text-primary-foreground hover:bg-primary/90" size="sm">
                   <Plus className="w-4 h-4 mr-2" />
                   Create Agreement
@@ -297,11 +297,10 @@ export function Dashboard() {
                   <TableCell>{agreement.type}</TableCell>
                   <TableCell>
                     <span
-                      className={`px-2 py-1 rounded text-xs ${
-                        agreement.status === 'COMPLETED'
+                      className={`px-2 py-1 rounded text-xs ${agreement.status === 'COMPLETED'
                           ? 'bg-primary/10 text-primary'
                           : 'bg-red-100 text-red-700'
-                      }`}
+                        }`}
                     >
                       {agreement.status}
                     </span>

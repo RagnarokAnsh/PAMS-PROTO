@@ -57,7 +57,7 @@ export function Agreements() {
             <FileDown className="w-4 h-4 mr-2" />
             Export
           </Button>
-          <Link to="/dashboard/agreements/create">
+          <Link to="/agreements/create">
             <Button className="bg-primary hover:bg-primary/80" size="sm">
               <Plus className="w-4 h-4 mr-2" />
               Create Agreement
@@ -89,7 +89,7 @@ export function Agreements() {
               <TableRow
                 key={agreement.id}
                 className="cursor-pointer hover:bg-gray-50 transition-colors"
-                onClick={() => navigate(`/dashboard/agreements/${agreement.id}`)}
+                onClick={() => navigate(`/agreements/${agreement.id}`)}
               >
                 <TableCell>
                   <ChevronDown className="w-4 h-4 text-gray-400" />

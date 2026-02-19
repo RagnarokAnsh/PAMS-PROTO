@@ -1,5 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router";
-import { Login } from "./pages/Login";
+import { createBrowserRouter } from "react-router";
 import { Layout } from "./components/Layout";
 import { Dashboard } from "./pages/Dashboard";
 import { Agreements } from "./pages/Agreements";
@@ -16,14 +15,6 @@ import { Projects } from "./pages/Projects";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/dashboard" replace />,
-  },
-  {
-    path: "/login",
-    Component: Login,
-  },
-  {
-    path: "/dashboard",
     Component: Layout,
     children: [
       { index: true, Component: Dashboard },

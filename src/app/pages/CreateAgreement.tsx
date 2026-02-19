@@ -298,7 +298,7 @@ export function CreateAgreement() {
     // Prototype-only behavior: just return to agreements list.
     // Data persistence/workflow will be wired later.
     void values;
-    navigate('/dashboard/agreements');
+    navigate('/agreements');
   };
 
   return (
@@ -306,7 +306,7 @@ export function CreateAgreement() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <h1 className="text-2xl">Create Agreement</h1>
-        <Button variant="outline" onClick={() => navigate('/dashboard/agreements')}>
+        <Button variant="outline" onClick={() => navigate('/agreements')}>
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back
         </Button>
@@ -769,7 +769,7 @@ export function CreateAgreement() {
 
             {/* Action Buttons */}
             <div className="flex justify-end space-x-4">
-              <Button variant="outline" type="button" onClick={() => navigate('/dashboard/agreements')}>
+              <Button variant="outline" type="button" onClick={() => navigate('/agreements')}>
                 Cancel
               </Button>
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90" type="submit">

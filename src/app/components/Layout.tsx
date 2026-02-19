@@ -16,16 +16,16 @@ import {
 } from 'lucide-react';
 
 const menuItems = [
-  { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { path: '/dashboard/agreements', label: 'Agreements', icon: FileText },
-  { path: '/dashboard/partners', label: 'Partners', icon: HandshakeIcon },
+  { path: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/agreements', label: 'Agreements', icon: FileText },
+  { path: '/partners', label: 'Partners', icon: HandshakeIcon },
   { path: '/my-actions', label: 'My Actions', icon: CheckCircle },
-  { path: '/dashboard/users', label: 'Users', icon: Users },
-  { path: '/dashboard/audit-log', label: 'Audit Log', icon: ClipboardList },
+  { path: '/users', label: 'Users', icon: Users },
+  { path: '/audit-log', label: 'Audit Log', icon: ClipboardList },
   { path: '/access-request', label: 'Access Request', icon: UserCircle },
-  { path: '/dashboard/amendments', label: 'Amendments', icon: FileEdit },
-  { path: '/dashboard/grants', label: 'Grants', icon: DollarSign },
-  { path: '/dashboard/projects', label: 'Projects', icon: FolderKanban },
+  { path: '/amendments', label: 'Amendments', icon: FileEdit },
+  { path: '/grants', label: 'Grants', icon: DollarSign },
+  { path: '/projects', label: 'Projects', icon: FolderKanban },
 ];
 
 import {
@@ -42,17 +42,16 @@ export function Layout() {
   const navigate = useNavigate();
   const { userRole, setUserRole } = useUser();
 
-  const handleLogout = () => {
-    navigate('/login');
-  };
-
   const getPageTitle = () => {
     // Agreement detail page: show "Agreement : {ID}"
-    const agreementMatch = location.pathname.match(/\/dashboard\/agreements\/(.+)/);
+    const agreementMatch = location.pathname.match(/\/agreements\/(.+)/);
     if (agreementMatch) {
       return `Agreement : ${agreementMatch[1]}`;
     }
-    const matches = menuItems.filter((item) => location.pathname.startsWith(item.path));
+    const matches = menuItems.filter((item) => {
+      if (item.path === '/') return location.pathname === '/';
+      return location.pathname.startsWith(item.path);
+    });
     const best = matches.sort((a, b) => b.path.length - a.path.length)[0];
     return best?.label || 'Dashboard';
   };
@@ -94,15 +93,6 @@ export function Layout() {
             );
           })}
         </nav>
-
-        {/* Logout */}
-        <button
-          onClick={handleLogout}
-          className="flex items-center px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 border-t border-gray-200"
-        >
-          <LogOut className="w-5 h-5 mr-3" />
-          Logout
-        </button>
       </aside>
 
       {/* Main Content */}

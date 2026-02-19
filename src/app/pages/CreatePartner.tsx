@@ -460,7 +460,7 @@ export function CreatePartner({ embedded = false, onCreated, onCancel }: CreateP
       return;
     }
 
-    navigate('/dashboard/partners');
+    navigate('/partners');
   };
 
   return (
@@ -468,7 +468,7 @@ export function CreatePartner({ embedded = false, onCreated, onCancel }: CreateP
       {!embedded && (
         <div className="flex items-center justify-between">
           <h1 className="text-2xl">Create Partner</h1>
-          <Button variant="outline" onClick={() => navigate('/dashboard/partners')}>
+          <Button variant="outline" onClick={() => navigate('/partners')}>
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
           </Button>
@@ -769,7 +769,7 @@ export function CreatePartner({ embedded = false, onCreated, onCancel }: CreateP
                 onCancel?.();
                 return;
               }
-              navigate('/dashboard/partners');
+              navigate('/partners');
             }}
           >
             Cancel

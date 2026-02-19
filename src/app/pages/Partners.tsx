@@ -149,7 +149,7 @@ export function Partners() {
           <Button
             className="bg-primary text-primary-foreground hover:bg-primary/90"
             size="sm"
-            onClick={() => navigate('/dashboard/partners/create')}
+            onClick={() => navigate('/partners/create')}
           >
             <Plus className="w-4 h-4 mr-1" />
             Create Partner

@@ -123,7 +123,7 @@ export function AgreementDetails() {
 
   const getActionButtons = (status?: string) => {
     const backButton = (
-      <Link to="/dashboard/agreements">
+      <Link to="/agreements">
         <Button
           variant="outline"
           size="sm"
@@ -242,7 +242,7 @@ export function AgreementDetails() {
             <RefreshCw className="w-4 h-4" />
           </Button>
           <div className="h-6 w-px bg-gray-200"></div>
-          <Link to="/dashboard/agreements">
+          <Link to="/agreements">
             <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
