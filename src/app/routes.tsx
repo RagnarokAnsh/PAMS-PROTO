@@ -16,7 +16,7 @@ import { Projects } from "./pages/Projects";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/login" replace />,
+    element: <Navigate to="/dashboard" replace />,
   },
   {
     path: "/login",
